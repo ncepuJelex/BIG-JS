@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>告知动态显示</title>
+
+	<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!--下面一段是解决IE版本低问题-->
+	 <!--[if lt IE 9]>
+	  <script src="bootstrap-3.3.5-dist/js/html5shiv.min.js"></script>
+	  <script src="bootstrap-3.3.5-dist/js/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+	<script src="bootstrap-3.3.5-dist/js/jquery-1.11.3.min.js"></script>
+  	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			var data = {"sEcho":1,"iTotalRecords":1,"iTotalDisplayRecords":1,"iDisplayStart":0,"resultData":[{"policyId":"2235256","representationId":"544","customerId":"463","yesNo":"111","notes":"问题x","fill1":"补充1","fill2":"补充2"},{"policyId":"2235256","representationId":"544","customerId":"463","yesNo":"111","notes":"问题xx","fill1":"补充11","fill2":"补充22"}],"pageSize":5,"pageNum":1};
+
+
+			console.log(data.resultData);
+
+			var notifies = data.resultData;
+			for(var i=0; i<notifies.length; i++) {
+				
+				/*var div1 = '<div class="form-group">' +
+				'<label class="col-md-2 control-label" for="username">用户名：</label>' +
+				'<div class="col-md-10">' +
+					'<input type="text" class="form-control" id="username" placeholder="请输入用户名">' +
+				'</div>' +
+			'</div>';
+
+			$("#form").append(div1);*/
+
+			/*var groupDiv1 = $('<div></div>');
+			groupDiv1.addClass('form-group');
+
+			var label1 = $('<label></label>');
+			label1.addClass('col-md-2 control-label');
+			label1.text(notifies[i].notes);
+
+			groupDiv1.append(label1);
+			$("#form").append(groupDiv1);*/
+
+
+				var n1 = '<div class="row">' +
+					'<div class="col-xs-12">' +
+							'<label for="proposalNo" class="control-label col-xs-5">'+ notifies[i].notes +'</label>' +
+							'<label class="radio-inline">' +
+								'<input type="radio" name="' + notifies[i].fill2 + '" id="insuApply1" value="1"> 是' +
+							'</label>' +
+							'<label class="radio-inline">' +
+								'<input type="radio" name="' + notifies[i].fill2 + '" id="insuApply0" value="0"> 否' +
+							'</label>' +
+					'</div>' +
+				'</div>';
+
+				$("#form").append(notifies[i].notes);
+				$("#form").append(n1);
+			}
+
+			/*var boarddiv = "<div style='background:red;width:300px;height:200px;z-index:999;position:absolute;top:0;margin-top:100px;'>加载中...</div>"; 
+
+			$('body').append(boarddiv);*/
+		});
+	</script>
+</head>
+<body>
+	<div id='div' style='width: 300px; height: 200px; margin: 30px 10px; background: skyblue;'>
+		
+		<p style="width:100px; color:red;">xx</p>
+	</div>
+
+	<div class="container" style="padding:50px;background-color:green;">
+		
+		<form class="form-horizontal" id="form">
+
+		</form>
+
+		</div>
+
+</body>
+</html>

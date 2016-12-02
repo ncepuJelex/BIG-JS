@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>get fill </title>
+
+	<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!--下面一段是解决IE版本低问题-->
+	 <!--[if lt IE 9]>
+	  <script src="bootstrap-3.3.5-dist/js/html5shiv.min.js"></script>
+	  <script src="bootstrap-3.3.5-dist/js/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+
+	<script src="bootstrap-3.3.5-dist/js/jquery-1.11.3.min.js"></script>
+  	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+
+			var data = {"sEcho":1,"iTotalRecords":1,"iTotalDisplayRecords":1,"iDisplayStart":0,"resultData":[{"policyId":"2235256","representationId":"544","customerId":"463","yesNo":"111","notes":"问题x","fill1":"补充1","fill2":"补充2"},{"policyId":"2235256","representationId":"544","customerId":"463","yesNo":"111","notes":"问题xx","fill1":"补充11","fill2":"补充22"}],"pageSize":5,"pageNum":1};
+
+
+			console.log(data.resultData);
+
+			var notifies = data.resultData;
+
+			var reg = /^fill\d$/gi;
+			var count = 0;
+			var fillArr = [];
+			for(var i=0; i<notifies.length; i++) {
+				
+				for(var key in notifies[i]) {
+					if(key.match(reg)) {
+						fillArr.push(notifies[i][key]);
+						count++;
+					}
+				}
+
+				alert(fillArr);
+				console.log(fillArr);
+
+				var n1 = "";
+				for(var j=0; j<count; j++) {
+
+					n1 += '<div class="row">' +
+					'<div class="col-xs-12">' +
+							'<label for="proposalNo" class="control-label col-xs-5">'+ fillArr[j] +'</label>' +
+							'<label class="radio-inline">' +
+								'<input type="radio" name="' + fillArr[j] + '" id="insuApply1" value="1"> 是' +
+							'</label>' +
+							'<label class="radio-inline">' +
+								'<input type="radio" name="' + fillArr[j] + '" id="insuApply0" value="0"> 否' +
+							'</label>' +
+					'</div>' +
+				'</div>';
+				}
+				
+				$("#form").append(notifies[i].notes);
+				$("#form").append(n1);
+
+				count = 0;
+				fillArr = [];
+
+			}
+
+			/*var obj = {"id": 1, "name":"张三"};
+			for(var key in obj){
+			    alert("Key是:" + key);
+			    alert("对应的值是:" + obj[key]);
+
+			}*/
+
+		});
+	</script>
+</head>
+<body>
+	<div class="container" style="padding:50px;background-color:green;">
+		
+		<form class="form-horizontal" id="form">
+
+		</form>
+
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap datepick</title>
+
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+
+    <!--下面一段是解决IE版本低问题-->
+    <!--[if lt IE 9]>
+    <script src="bootstrap-3.3.5-dist/js/html5shiv.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        #effectDate{
+            cursor: pointer;
+        }
+        #suspendDate{
+            cursor: pointer;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <form id="timeValidateForm" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label" for="effectDate">启用日期:</label>
+
+                    <div class="col-xs-5">
+                        <input id="effectDate" type="text" class="form-control" name="effectDate" value=""
+                               placeholder="YYYY-MM-DD" data-date-format="yyyy-mm-dd"/>
+                        <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                        <!--<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label" for="suspendDate">停用日期:</label>
+                    <div class="col-xs-9">
+                        <input id="suspendDate" type="text" class="form-control" name="suspendDate" value=""
+                               placeholder="YYYY-MM-DD" data-date-format="yyyy-mm-dd"/>
+                        <!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+                        <!--<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Meeting time</label>
+                <div class="col-xs-4">
+                    <div class="input-group date" id="meeting">
+                        <input type="text" class="form-control" name="meeting" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+                    </div>
+                    <span class="help-block">YYYY-MM-DD</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="form-group text-center">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-primary" id="btnSave">保存</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+<script src="bootstrap-3.3.5-dist/js/jquery-1.11.3.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/time_validate.js"></script>

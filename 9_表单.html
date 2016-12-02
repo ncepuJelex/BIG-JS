@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--解决IE低版本问题-->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+ 
+  <title>Bootstrap基础入门</title>
+
+  <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!--下面一段是解决IE版本低问题-->
+ <!--[if lt IE 9]>
+  <script src="bootstrap-3.3.5-dist/js/html5shiv.min.js"></script>
+  <script src="bootstrap-3.3.5-dist/js/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+ </head>
+ <body style="padding:50px;background-color:#ccc;">
+
+	<div class="container" style="padding:50px;background-color:#fff;">
+		
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="username">用户名：</label>
+				<div class="col-md-10">
+					<input type="text" class="form-control" id="username" placeholder="请输入用户名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="password">密码：</label>
+				<div class="col-md-10">
+					<input type="password" class="form-control" id="password" placeholder="请输入密码">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label">上传头像：</label>
+				<div class="col-md-10">
+					<input type="file">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label">兴趣爱好：</label>
+				<div class="col-md-10">
+					<label class="checkbox-inline"><input type="checkbox" value="coding">编码</label>
+					<label class="checkbox-inline"><input type="checkbox" value="pingpong">乒乓</label>
+					<label class="checkbox-inline"><input type="checkbox" value="danger">冒险</label>
+					<label class="checkbox-inline"><input type="checkbox" value="sleep">睡觉</label>
+					<label class="checkbox-inline"><input type="checkbox" value="book">看书</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-2 control-label">学历：</label>
+				<div class="col-md-10">
+					<label class="radio-inline">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 中学
+					</label>
+					<label class="radio-inline control-label">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 大学
+					</label>
+					<label class="radio-inline control-label">
+					  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 博士
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="desc" class="col-md-2 control-label">个人简介：</label>
+				<div class="col-md-10">
+					<textarea class="form-control" id="desc" rows="5" placeholder="请输入个人简介"></textarea>
+				</div>
+			</div>
+			<div class="col-md-offset-2">
+				<button class="btn btn-success active" type="button">提交表单</button>
+			</div>
+			
+		</form>
+
+	</div>
+
+ </body>
+</html>
+  <script src="bootstrap-3.3.5-dist/js/jquery-1.11.3.min.js"></script>
+  <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
