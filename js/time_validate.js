@@ -133,10 +133,12 @@ $('#timeValidateForm').bootstrapValidator({
 	    todayBtn: true,
 	    forceParse : false,
 	    pickerPosition: "bottom-left",
-		startDate:'2016-11-11',
+		//startDate:'2016-11-11',
+		//endDate:new Date(),
 		//endDate:'2017-05-19'
 	}).on('changeDate',function(e) {
 		console.log(e.date);
+		console.log(e);
 		//endDay是根据业务需求所获取到的日期
 		//var endDay = '2016-12-31';
 		//if(e.date>new Date(endDay)) {

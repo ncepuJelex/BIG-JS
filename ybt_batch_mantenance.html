@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ybtbatch-maintenance</title>
+
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="css/bootstrapValidator.min.css" rel="stylesheet">
+
+    <!--下面一段是解决IE版本低问题-->
+    <!--[if lt IE 9]>
+    <script src="bootstrap-3.3.5-dist/js/html5shiv.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <!-- form: -->
+        <section>
+            <div class="page-header">
+                <h1>银保通批处理运维</h1>
+            </div>
+
+            <div class="col-lg-8 col-lg-offset-2">
+                <form id="ybtbatchForm" method="post" action="http://localhost:8080/20160714jstree/" class="form-horizontal">
+                    <fieldset>
+                        <legend>批处理执行类别</legend>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">银行</label>
+                            <div class="col-lg-5">
+                                <select class="form-control" name="bank" id="bank">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">任务</label>
+                            <div class="col-lg-5">
+                                <select class="form-control" name="task" id="task">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">日期</label>
+                            <div class="col-lg-5">
+                                <div class="input-group date" id="taskDate">
+                                    <input type="text" class="form-control" name="taskDate" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                </div>
+                                <span class="help-block">YYYY-MM-DD</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">类别</label>
+                            <div class="col-lg-5">
+                                <label class="radio-inline" id="downloadLabel">
+                                    <input type="radio" name="inlineRadioOptions" id="download" value="1"> 下载
+                                </label>
+                                <label class="radio-inline control-label">
+                                    <input type="radio" name="inlineRadioOptions" id="billcheck" value="2"> 对账
+                                </label>
+                                <label class="radio-inline control-label" id="downloadcheckLabel">
+                                    <input type="radio" name="inlineRadioOptions" id="downloadcheck" value="3"> 下载对账
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- :form -->
+    </div>
+</div>
+
+</body>
+</html>
+<script src="bootstrap-3.3.5-dist/js/jquery-1.11.3.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/ybtbatch_maintenance.js"></script>
